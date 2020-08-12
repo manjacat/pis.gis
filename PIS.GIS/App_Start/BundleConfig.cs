@@ -8,23 +8,43 @@ namespace PIS.GIS
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //ScriptBundle
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/plugins/jquery-ui/jquery-ui.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                        "~/plugins/bootstrap/js/bootstrap.bundle.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+                        "~/plugins/chart.js/Chart.min.js", //Chart js
+                        "~/plugins/sparklines/sparkline.js", //Sparkline
+                        "~/plugins/jqvmap/jquery.vmap.min.js", //JVQMap
+                        "~/plugins/jqvmap/maps/jquery.vmap.usa.js",
+                        "~/plugins/jquery-knob/jquery.knob.min.js", //Jqyery Knob Chart
+                        "~/plugins/moment/moment.min.js", //daterangepicker
+                        "~/plugins/daterangepicker/daterangepicker.js",
+                        "~/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js", //Tempusdominus Bootstrap 4
+                        "~/plugins/summernote/summernote-bs4.min.js", //Summernote
+                        "~/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js", //overlayScrollBars
+                        "~/dist/js/adminlte.js", //AdminLTE app
+                        "~/dist/js/pages/dashboard.js", //AdminLTE dashboard demo (demo purposes!)
+                        "~/dist/js/demo.js" //AdminLTE for demo purposes
+                        ));
+
+            //StyleBundle
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/plugins/fontawesome-free/css/all.min.css",
+                      "~/plugins/ionicons/css/ionicons.min.css",
+                      "~/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
+                      "~/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+                      "~/plugins/jqvmap/jqvmap.min.css",
+                      "~/dist/css/adminlte.min.css",
+                      "~/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+                      "~/plugins/daterangepicker/daterangepicker.css",
+                      "~/plugins/summernote/summernote-bs4.css"));
+
+
         }
     }
 }
