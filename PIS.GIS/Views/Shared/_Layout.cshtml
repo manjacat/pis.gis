@@ -8,14 +8,15 @@
 
     @Styles.Render("~/Content/css")
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition layout-top-nav">
+    <div class="wrapper">
+        @Html.Partial("_NavBar")
 
-    @Html.Partial("_NavBar")
-    @Html.Partial("_SideBar")
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        @RenderBody()
+        <!-- Khairil buang sidebar 13/8/2020 -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
