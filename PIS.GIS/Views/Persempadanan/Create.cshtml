@@ -8,29 +8,13 @@
 }
 
 <style>
-    .sidebar-permohonan {
-        min-height:100%;
+    #sidebar-permohonan {
+        min-height: 100vh;
+    }
+    .breadcrumb{
+        background-color: #fff;
     }
 </style>
-
-<div class="content-header">
-    <div class="container">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1 class="m-0 text-dark"> Sistem PIS<small>1.0</small></h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Persempadanan</a></li>
-                    <li class="breadcrumb-item active">Permohonan Baru</li>
-                </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-</div>
-
-
 
 @using (Html.BeginForm())
 {
@@ -40,59 +24,83 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="sidebar main-sidebar sidebar-dark-gray">
-                    <nav class="mt-2">
-                        <ul>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link active">
-                                    <p>Permohonan Baru</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Status Permohonan</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div>
+                    <div id="sidebar-permohonan" class="bg-gradient-info border-right">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action bg-gradient-info">Permohonan Baru</a>
+                            <a href="#" class="list-group-item list-group-item-action bg-gradient-info">Status Permohonan</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- right column -->
-                <div class="col-md-10">
+                <div class="col-md-6 offset-md-2">
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Permohonan</h3>
                         </div>
                         <!-- /.card-header -->
-                        <!-- form start -->
                         <form role="form">
                             <div class="card-body">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.NamaPemohon, htmlAttributes: new { @for = "NamaPemohon" })
-                                    @Html.EditorFor(model => model.NamaPemohon, new { htmlAttributes = new { @class = "form-control", placeholder = "Nama Pemohon" } })
-                                    @Html.ValidationMessageFor(model => model.NamaPemohon, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ol class="breadcrumb float-sm-right">
+                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Persempadanan</a></li>
+                                            <li class="breadcrumb-item active">Permohonan Baru</li>
+                                        </ol>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Emel, htmlAttributes: new { @for = "Emel" })
-                                    @Html.EditorFor(model => model.Emel, new { htmlAttributes = new { @class = "form-control", placeholder = "Emel" } })
-                                    @Html.ValidationMessageFor(model => model.Emel, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                @Html.LabelFor(model => model.NamaPemohon, htmlAttributes: new { @for = "NamaPemohon" })
+                                            </div>
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.NamaPemohon, new { htmlAttributes = new { @class = "form-control", placeholder = "Nama Pemohon" } })
+                                                @Html.ValidationMessageFor(model => model.NamaPemohon, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                @Html.LabelFor(model => model.Emel, htmlAttributes: new { @for = "Emel" })
+                                            </div>
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.Emel, new { htmlAttributes = new { @class = "form-control", placeholder = "Emel" } })
+                                                @Html.ValidationMessageFor(model => model.Emel, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                @Html.LabelFor(model => model.IpdKontinjen, htmlAttributes: new { @for = "IpdKontinjen" })
+                                            </div>
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.IpdKontinjen, new { htmlAttributes = new { @class = "form-control", placeholder = "IPD / Kontinjen" } })
+                                                @Html.ValidationMessageFor(model => model.IpdKontinjen, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                @Html.LabelFor(model => model.NamaCadangan, htmlAttributes: new { @for = "NamaCadangan" })
+                                            </div>
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.NamaCadangan, new { htmlAttributes = new { @class = "form-control", placeholder = "Nama Cadangan" } })
+                                                @Html.ValidationMessageFor(model => model.NamaCadangan, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.IpdKontinjen, htmlAttributes: new { @for = "IpdKontinjen" })
-                                    @Html.EditorFor(model => model.IpdKontinjen, new { htmlAttributes = new { @class = "form-control", placeholder = "IPD / Kontinjen" } })
-                                    @Html.ValidationMessageFor(model => model.IpdKontinjen, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.NamaCadangan, htmlAttributes: new { @for = "NamaCadangan" })
-                                    @Html.EditorFor(model => model.NamaCadangan, new { htmlAttributes = new { @class = "form-control", placeholder = "Nama Cadangan" } })
-                                    @Html.ValidationMessageFor(model => model.NamaCadangan, "", new { @class = "text-danger" })
-                                </div>
+
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer text-right">
                                 <button type="submit" class="btn btn-primary">Baru</button>
                             </div>
                         </form>
+
+                        <!-- form start -->
+
                     </div>
                 </div>
             </div>

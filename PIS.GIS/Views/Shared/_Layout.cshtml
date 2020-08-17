@@ -23,7 +23,15 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>$.widget.bridge('uibutton', $.ui.button)</script>
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/scripts")
+    @Scripts.Render("~/bundles/chartjs")
+    @Scripts.Render("~/bundles/sparkline")
+    @Scripts.Render("~/bundles/jvqmap")
+    @Scripts.Render("~/bundles/knobchart")
+    @Scripts.Render("~/bundles/daterangepicker")
+    @Scripts.Render("~/bundles/tempusdominus")
+    @Scripts.Render("~/bundles/summernote")
+    @Scripts.Render("~/bundles/overlayscrollbar")
+    @Scripts.Render("~/bundles/adminlte")
     @RenderSection("scripts", required: false)
 
 </body>
